@@ -15,15 +15,14 @@ plugins:
  - jekyll-seo-tag
  - jekyll-sitemap
 exclude:
- #- Gemfile
  - Gemfile.lock
 
 # jekyll-seo-tag config
 twitter:
   username: gvtshtdwn
-  card: summary
+  card: summary_large_image
 #facebook:
-  #app_id: 1234
+  app_id: 411967176665932
   #publisher: 1234
   #admins: 1234
 social:
@@ -46,4 +45,4 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/default-card.png
+      image: /assets/images/gvtshtdwn-default-image.png
