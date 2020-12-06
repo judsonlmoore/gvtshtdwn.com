@@ -3,9 +3,9 @@ name: Twitter Promoter
 on:
   schedule:
     # 10 AM and 3 PM Everyday
-    - cron: "00 10 * * *"
+    # - cron: "00 10 * * *"
   push:
-    branches: [ master ]
+    # branches: [ master ]
 
 jobs:
   build:
