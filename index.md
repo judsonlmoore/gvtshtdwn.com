@@ -5,14 +5,13 @@
 layout: default
 ---
 
-## This is a title
+<header class="text-center">
+  <h1 class="display-4 mb-4">{{ site.title }}</h1>
+  <p class="lead text-muted mb-0">
+    {{ site.description }}
+  </p>
+</header>
 
-Here is some information. 
+{% include countdown.html %}
 
-A new paragraph
-
-* and a list
-* of
-* things
-
-[Here is a link](/)
+{% include faq.html %}
