@@ -14,7 +14,7 @@ plugins:
  - jekyll-seo-tag
  - jekyll-sitemap
 exclude:
- - Gemfile
+ #- Gemfile
  - Gemfile.lock
 
 # jekyll-seo-tag config
