@@ -34,16 +34,20 @@ layout: compress
   <body class="{{layout}}">
 
     <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
 
-      {{ content }}
+          {{ content }}
 
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->
     <div class="footer pb-3 bg-dark text-base">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mt-4">
+          <div class="col-lg-8 mx-auto mt-4">
             <ul class="list-inline">
               <li class="list-inline-item">
                 © {{ site.time | date: '%Y' }} {{ site.title }}
