@@ -5,7 +5,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The current status of the US Federal Government and 
   countdown to when the next government shutdown could occur.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.gvtshtdwn.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://gvtshtdwn.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:path
 image: /assets/images/gvtshtdwn-default-image.png
 
