@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<!-- hero section -->
+<div class="bg-shape bg-cover" style=" background-image:linear-gradient(180deg, rgba(30, 24, 53, 0.4) 0%, rgba(30, 24, 53, 0.4) 90.16%), url(../assets/images/united-states-congress.jpg); ">
+	<div class="container">
+    <div class="row">
+      <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+        <div class="text-center pt-lg-13 pt-11 pb-lg-15 pb-13">
+          <h1 class="mb-3 display-4 text-white">{{ site.title }}</h1>
+          <p class="lead text-light mb-4">
+            {{ site.description }}
+          </p>
+					<a class="twitter-follow-button"
+					  href="https://twitter.com/gvtshtdwn"
+					  data-size="large"
+					  data-show-count="false">
+						Follow @GvtShtDwn
+					</a>
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
+
+<!-- countdown timer -->
+<div class="container">
+  <div class="row">
+    <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+      <div class="mt-n12">
+      	{% include countdown.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row mb-5">
+    <div class="col-lg-8 mx-auto">
+	    {% for item in site.data.faq %}
+	    <div class="mb-4 pb-4 border-bottom border-light">
+		    <h2>{{ item.q }}</h2>
+		    <p>{{ item.a }}</p>
+		  </div>
+	    {% endfor %}
+		</div>
+	</div>
+</div>

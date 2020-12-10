@@ -1,0 +1,30 @@
+---
+layout: 
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}/</link>
+    <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+      <item>
+        <title>{{ site.title | xml_escape }}</title>
+        <description>{{ site.description | truncatewords: 120 | strip_html | xml_escape }}</description>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <link>{{ site.url | absolute_url }}</link>
+        <guid isPermaLink="true">{{ site.url | absolute_url }}</guid>
+        <category>government</category>
+        <category>shutdown</category>
+        <category>congress</category>
+        <category>budget</category>
+        <category>appropriationsbill</category>
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.image | absolute_url }}"/>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="{{ site.image | absolute_url }}"/>
+      </item>
+  </channel>
+</rss>
