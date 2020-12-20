@@ -66,14 +66,34 @@ layout: compress
 
     <!-- Clock config -->
     <script type="text/javascript">
-      $(function () {
-        $('#clock').countdown('{{ site.funded-until }}').on('update.countdown', function(event) {
-          var $this = $(this).html(event.strftime(''
-            + '<span class="h1 font-weight-bold">%D</span> Day%!d'
-            + '<span class="h1 font-weight-bold">%H</span> Hr'
-            + '<span class="h1 font-weight-bold">%M</span> Min'
-            + '<span class="h1 font-weight-bold">%S</span> Sec'));
-        });
+      $('#status').countdown('{{ site.funded-until }}', {elapse: true})
+      .on('update.countdown', function(event) {
+        var $this = $(this);
+        if (event.elapsed) {
+          $this.html(event.strftime(''
+            + '<div class="rounded bg-gradient-defunded text-white shadow p-5 text-center mb-5">'
+            +   '<p class="lead">The US Federal Government ran out of money on {{ site.funded-until | date: "%A, %B %d, %Y" }} and is now shutdown for:</p>'
+            +   '<p>'
+            +     '<span class="h1 font-weight-bold">%D</span> Day%!d'
+            +     '<span class="h1 font-weight-bold">%H</span> Hr'
+            +     '<span class="h1 font-weight-bold">%M</span> Min'
+            +     '<span class="h1 font-weight-bold">%S</span> Sec'
+            +   '</p>'
+            +   '<p class="font-weight-bold"><u><a href="https://www.congress.gov/contact-us" target="_blank" class="text-white">Contact your member of Congress</a></u> to ask them to fund the government.</p>'
+            + '</div>'));
+        } else {
+          $this.html(event.strftime(''
+            + '<div class="rounded bg-gradient-funded text-white shadow p-5 text-center mb-5">'
+            +   '<p class="lead">The US Federal Government is currently funded until {{ site.funded-until | date: "%A, %B %d, %Y" }} and will shutdown in:</p>'
+            +   '<p>'
+            +     '<span class="h1 font-weight-bold">%D</span> Day%!d'
+            +     '<span class="h1 font-weight-bold">%H</span> Hr'
+            +     '<span class="h1 font-weight-bold">%M</span> Min'
+            +     '<span class="h1 font-weight-bold">%S</span> Sec'
+            +   '</p>'
+            +   '<p class="font-weight-bold"><u><a href="https://www.congress.gov/contact-us" target="_blank" class="text-white">Contact your member of Congress</a></u> to ask them to fund the government.</p>'
+            + '</div>'));
+        }
       });
     </script>
 
