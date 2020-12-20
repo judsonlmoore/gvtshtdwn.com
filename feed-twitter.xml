@@ -8,23 +8,37 @@ layout:
     <title>{{ site.title | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}/</link>
-    <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+    <atom:link href="{{ '/feed-twitter.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
       <item>
-        <title>{{ site.title | xml_escape }}</title>
-        <description>{{ site.description | truncatewords: 120 | strip_html | xml_escape }}</description>
-        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-        <link>{{ site.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ site.url | absolute_url }}</guid>
+        {% capture nowunix %}{{ 'now' | date: '%s' }}{% endcapture %}
+        {% capture defunded_date %}{{ site.funded-until | date: '%s' }}{% endcapture %}
+        {% if defunded_date > nowunix %}
+        <title>The United States Government is open</title>
+        <description>The US Federal Government is currently funded until {{ site.funded-until | date: "%A, %B %d, %Y" }} and will shutdown in {% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }} days.</description>
         <category>government</category>
         <category>shutdown</category>
         <category>congress</category>
         <category>budget</category>
         <category>appropriationsbill</category>
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.image | absolute_url }}"/>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="{{ site.image | absolute_url }}"/>
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }}/gvtshtdwn-open_orps3r.png"/>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }}/gvtshtdwn-open_orps3r.png"/>
+        {% else %}
+        <title>The United States Government is shutdown</title>
+        <description>The US Federal Government ran out of money on {{ site.funded-until | date: "%A, %B %d, %Y" }} and has therefor been shutdown for {% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: -3600 | divided_by: 24 | round }} days.</description>
+        <category>government</category>
+        <category>shutdown</category>
+        <category>congress</category>
+        <category>budget</category>
+        <category>appropriationsbill</category>
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: -3600 | divided_by: 24 | round }},co_rgb:FFFFFF/gvtshtdwn-closed_ff3x0z.png"/>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: -3600 | divided_by: 24 | round }},co_rgb:FFFFFF/gvtshtdwn-closed_ff3x0z.png"/>
+        {% endif %}
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <link>{{ site.url | absolute_url }}</link>
+        <guid isPermaLink="true">{{ site.url | absolute_url }}</guid>
       </item>
   </channel>
 </rss>
