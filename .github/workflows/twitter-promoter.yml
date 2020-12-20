@@ -2,6 +2,9 @@
 name: Twitter Promoter
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     # 11 AM Everyday
     - cron: "00 11 * * *"
