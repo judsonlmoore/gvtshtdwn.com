@@ -18,7 +18,7 @@ jobs:
     - name: Checkout Blog Promoter
       uses: actions/checkout@v2
       with:
-        repository: khalidabuhakmeh/BlogPromoter
+        repository: judsonlmoore/BlogPromoter
 
     - name: Install .NET Core
       uses: actions/setup-dotnet@v1
