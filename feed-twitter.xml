@@ -17,22 +17,20 @@ layout:
         {% capture defunded_date %}{{ site.funded-until | date: '%s' }}{% endcapture %}
         {% if defunded_date > nowunix %}
         <title>The US Federal Government is currently funded until {{ site.funded-until | date: "%A, %B %d, %Y" }} and will shutdown in {% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }} days.</title>
+        <image>https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }}/gvtshtdwn-open_orps3r.png"</image>
         <category>government</category>
         <category>shutdown</category>
         <category>congress</category>
         <category>budget</category>
         <category>appropriationsbill</category>
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }}/gvtshtdwn-open_orps3r.png"/>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }}/gvtshtdwn-open_orps3r.png"/>
         {% else %}
         <title>The US Federal Government ran out of money on {{ site.funded-until | date: "%A, %B %d, %Y" }} and has therefor been shutdown for {% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: -3600 | divided_by: 24 | round }} days.</title>
+        <image>https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24 | round }}/gvtshtdwn-open_orps3r.png"</image>
         <category>government</category>
         <category>shutdown</category>
         <category>congress</category>
         <category>budget</category>
         <category>appropriationsbill</category>
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: -3600 | divided_by: 24 | round }},co_rgb:FFFFFF/gvtshtdwn-closed_ff3x0z.png"/>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="https://res.cloudinary.com/judsonlmoore-com/image/upload/l_text:Arial_300_bold:{% assign myVar="now" | date: "%s" %}{{ site.funded-until | date: "%s" | minus: myVar | divided_by: -3600 | divided_by: 24 | round }},co_rgb:FFFFFF/gvtshtdwn-closed_ff3x0z.png"/>
         {% endif %}
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <link>{{ site.url | absolute_url }}</link>
