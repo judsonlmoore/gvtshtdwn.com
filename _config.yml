@@ -12,17 +12,17 @@ image: /assets/images/gvtshtdwn-default-image.png
 # build settings
 markdown: kramdown
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
- - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 exclude:
- - Gemfile.lock
+  - Gemfile.lock
 
 # jekyll-seo-tag config
 twitter:
   username: gvtshtdwn
   card: summary_large_image
-#facebook:
+  #facebook:
   app_id: 411967176665932
   #publisher: 1234
   #admins: 1234
@@ -31,17 +31,17 @@ social:
   links:
     - https://twitter.com/gvtshtdwn
 #webmaster_verifications:
-  #google: 1234
-  #bing: 1234
-  #alexa: 1234
-  #yandex: 1234
-  #baidu: 1234
+#google: 1234
+#bing: 1234
+#alexa: 1234
+#yandex: 1234
+#baidu: 1234
 gtm: G-61LLZHBRPT
 
-# countdown config 
-funded-until: '2023/09/31 06:00:00'
+# countdown config
+funded-until: "2024/01/20 06:00:00"
 
-# site defaults 
+# site defaults
 defaults:
   - scope:
       path: ""
